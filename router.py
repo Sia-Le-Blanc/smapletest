@@ -1,42 +1,69 @@
-from google import genai
-import os
+import requests
+import json
 
 class Router:
     def __init__(self):
-        self.client = genai.Client(api_key=os.getenv('GOOGLE_API_KEY'))
-        self.model_id = "gemini-1.5-flash"
+        self.url = "http://localhost:11434/api/generate"
+        self.model_id = "gemma2:2b"
     
     def decide(self, query, context=""):
-        prompt = f"""당신은 비서실장입니다. 질문을 분석하여 어떤 전문가에게 맡길지 결정하세요.
+        prompt = f"""당신은 기업 비서실장입니다. 한국어로만 답변하세요.
 
-이전 맥락: {context}
+[이전 분석 맥락]
+{context}
 
-질문: {query}
+[현재 질문]
+{query}
 
-선택 가능한 전문가: finance, hr, legal
-여러 명이 필요하면 쉼표로 구분 (예: finance,hr)
+[임무]
+이 질문을 해결하기 위해 어떤 전문가의 분석이 필요한지 판단하세요.
 
-답변 형식: 전문가이름만 (설명 없이)"""
+선택 가능한 전문가:
+- finance: 재무/회계/자금 관련
+- hr: 인사/조직/인력 관련  
+- legal: 법무/소송/컴플라이언스 관련
 
-        response = self.client.models.generate_content(
-            model=self.model_id,
-            contents=prompt
-        )
+[응답 규칙]
+- 필요한 전문가 이름만 쉼표로 구분하여 작성
+- 예시: finance,hr
+- 설명 없이 전문가 이름만 출력"""
+
+        data = {
+            "model": self.model_id,
+            "prompt": prompt,
+            "stream": False
+        }
         
-        agents = response.text.strip().lower().replace(' ', '').split(',')
+        response = requests.post(self.url, json=data)
+        result = response.json()['response']
+        agents = result.strip().lower().replace(' ', '').split(',')
         return agents
     
     def should_continue(self, context):
-        prompt = f"""당신은 비서실장입니다. 지금까지의 분석 결과를 보고 추가 분석이 필요한지 판단하세요.
+        prompt = f"""당신은 기업 비서실장입니다. 한국어로만 답변하세요.
 
-분석 결과:
+[지금까지의 분석 결과]
 {context}
 
-충분한 인사이트를 얻었으면 "완료", 더 필요하면 "계속"이라고만 답하세요."""
+[임무]
+위 분석 결과가 경영진에게 보고하기에 충분한지 판단하세요.
 
-        response = self.client.models.generate_content(
-            model=self.model_id,
-            contents=prompt
-        )
+판단 기준:
+- 문제의 원인이 명확히 파악되었는가?
+- 구체적인 해결 방안이 제시되었는가?
+- 추가 분석이 필요한 영역이 있는가?
+
+[응답 규칙]
+충분하면: "완료"
+부족하면: "계속"
+(설명 없이 한 단어만 출력)"""
+
+        data = {
+            "model": self.model_id,
+            "prompt": prompt,
+            "stream": False
+        }
         
-        return "계속" in response.text
+        response = requests.post(self.url, json=data)
+        result = response.json()['response']
+        return "계속" in result

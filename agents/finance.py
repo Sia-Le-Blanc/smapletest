@@ -1,11 +1,11 @@
-from google import genai
-import os
+import requests
 import json
+import os
 
 class FinanceAgent:
     def __init__(self):
-        self.client = genai.Client(api_key=os.getenv('GOOGLE_API_KEY'))
-        self.model_id = "gemini-1.5-flash"
+        self.url = "http://localhost:11434/api/generate"
+        self.model_id = "gemma2:2b"
         
         with open('data/finance_data.json', 'r', encoding='utf-8') as f:
             self.data = json.load(f)
@@ -13,20 +13,27 @@ class FinanceAgent:
     def analyze(self, query, context=""):
         data_text = '\n'.join([f"{k}: {v}" for k, v in self.data.items()])
         
-        prompt = f"""당신은 CFO(재무팀장)입니다.
+        prompt = f"""당신은 CFO입니다. 한국어로만 답변하세요.
 
-보유 데이터:
+[재무 데이터]
 {data_text}
 
-이전 맥락: {context}
+[이전 맥락]
+{context}
 
-질문: {query}
+[질문]
+{query}
 
-재무 데이터를 기반으로 핵심 문제와 대책을 3줄 이내로 답변하세요."""
+[답변 규칙]
+- 핵심만 5줄 이내로 요약
+- 구체적 수치 포함
+- 실행 가능한 방안 제시"""
 
-        response = self.client.models.generate_content(
-            model=self.model_id,
-            contents=prompt
-        )
+        data = {
+            "model": self.model_id,
+            "prompt": prompt,
+            "stream": False
+        }
         
-        return response.text
+        response = requests.post(self.url, json=data)
+        return response.json()['response']
