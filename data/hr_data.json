@@ -1,0 +1,11 @@
+{
+  "report_title": "인사현황 보고서",
+  "period": "2024년 12월 기준",
+  "total_employees": "전체 직원 1,240명",
+  "resignation_rate": "이직률 18.3% (전년대비 +7.2%p)",
+  "avg_tenure": "평균 근속연수 4.2년 (감소 추세)",
+  "satisfaction": "직원만족도 52점 (100점 만점, 전년 73점)",
+  "recent_incidents": "최근 3개월 간 핵심인력 퇴사 23명. 생산직 결원 85명. 노조 임금협상 결렬.",
+  "overtime": "월평균 초과근무 68시간 (법정한도 초과)",
+  "training_budget": "교육훈련비 전년대비 -40% 삭감"
+}

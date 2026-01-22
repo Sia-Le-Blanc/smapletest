@@ -1,0 +1,11 @@
+{
+  "report_title": "법무 리스크 현황",
+  "period": "2024년 12월 기준",
+  "pending_lawsuits": "진행중인 소송 7건 (총 소송금액 230억원)",
+  "labor_disputes": "노동청 진정사건 12건 (임금체불 9건, 부당해고 3건)",
+  "patent_issue": "특허침해 소송 2건 패소 1심 판결 (손해배상 85억원)",
+  "regulatory_violation": "공정거래위원회 조사중 (부당거래 혐의)",
+  "contract_breach": "주요 납품계약 위반 클레임 3건 접수",
+  "compliance_score": "컴플라이언스 점검결과 62점 (80점 이상 필요)",
+  "urgent_matter": "대표이사 횡령 내부고발 건 검찰 이첩 예정"
+}
