@@ -1,11 +1,369 @@
 {
-  "report_title": "인사현황 보고서",
+  "report_title": "인사현황 종합보고서",
   "period": "2024년 12월 기준",
-  "total_employees": "전체 직원 1,240명",
-  "resignation_rate": "이직률 18.3% (전년대비 +7.2%p)",
-  "avg_tenure": "평균 근속연수 4.2년 (감소 추세)",
-  "satisfaction": "직원만족도 52점 (100점 만점, 전년 73점)",
-  "recent_incidents": "최근 3개월 간 핵심인력 퇴사 23명. 생산직 결원 85명. 노조 임금협상 결렬.",
-  "overtime": "월평균 초과근무 68시간 (법정한도 초과)",
-  "training_budget": "교육훈련비 전년대비 -40% 삭감"
+  "company_overview": {
+    "total_employees": 1240,
+    "by_employment_type": {
+      "정규직": 856,
+      "계약직": 284,
+      "파견/용역": 100
+    },
+    "by_department": {
+      "생산직": 720,
+      "연구개발": 180,
+      "영업/마케팅": 95,
+      "관리/지원": 245
+    },
+    "by_age": {
+      "20대": 245,
+      "30대": 420,
+      "40대": 385,
+      "50대 이상": 190
+    },
+    "gender_ratio": {
+      "남성": 782,
+      "여성": 458
+    }
+  },
+  "turnover": {
+    "resignation_rate": "18.3% (전년 11.1%)",
+    "total_resignations_2024": 227,
+    "by_reason": {
+      "자발적 퇴사": 168,
+      "권고사직": 42,
+      "계약만료": 17
+    },
+    "by_quarter": {
+      "Q1": 38,
+      "Q2": 45,
+      "Q3": 67,
+      "Q4": 77
+    },
+    "critical_departures": {
+      "핵심인력": 23,
+      "positions": [
+        "수석연구원 5명 (경쟁사 이직)",
+        "생산팀장 3명",
+        "영업본부장 1명",
+        "품질관리 전문가 4명"
+      ],
+      "estimated_loss": "채용/교육 비용 18억, 생산성 손실 추정 불가"
+    }
+  },
+  "recruitment": {
+    "new_hires_2024": 85,
+    "open_positions": 127,
+    "unfilled_critical": {
+      "생산직": 85,
+      "연구개발": 18,
+      "품질관리": 12,
+      "영업": 8,
+      "기타": 4
+    },
+    "avg_time_to_hire": "82일 (업계 평균 45일)",
+    "recruitment_budget": "12억 (전년 대비 -40%)"
+  },
+  "compensation": {
+    "avg_salary": "연 4,200만원",
+    "by_level": {
+      "임원": "12,500만원",
+      "부장": "8,200만원",
+      "차장": "6,800만원",
+      "과장": "5,400만원",
+      "대리": "4,200만원",
+      "사원": "3,200만원"
+    },
+    "salary_increase_2024": "0% (전년 3.5%)",
+    "bonus": "평균 0개월분 (전년 200%)",
+    "unpaid_overtime": "월평균 68시간 (법정 52시간 초과)",
+    "overtime_pay_arrears": "누적 23억"
+  },
+  "employee_satisfaction": {
+    "overall_score": "52/100 (전년 73)",
+    "by_category": {
+      "경영진 신뢰도": 28,
+      "업무 만족도": 58,
+      "보상 만족도": 35,
+      "복리후생": 62,
+      "성장 기회": 41,
+      "워라밸": 48
+    },
+    "engagement_score": "42% (전년 68%)",
+    "turnover_intention": "67% (1년 내 이직 고려)"
+  },
+  "labor_relations": {
+    "union_status": {
+      "조합원": 580,
+      "가입률": "80.6% (생산직 기준)",
+      "위원장": "김철수"
+    },
+    "recent_negotiations": {
+      "2024년 임단협": {
+        "status": "결렬 (2024.11.28)",
+        "union_demand": "기본급 8% 인상, 보너스 300%",
+        "company_offer": "동결, 보너스 0%",
+        "strike_notice": "2025.01.15 총파업 예고"
+      }
+    },
+    "labor_disputes": [
+      "부당해고 3건 (노동위원회 계류 중)",
+      "임금체불 9건 (노동청 진정)",
+      "산업안전 위반 5건 (과태료 8,500만원)",
+      "초과근무 미지급 집단소송 준비 중 (120명 참여)"
+    ]
+  },
+  "training_development": {
+    "training_budget": "4.2억 (전년 대비 -40%)",
+    "avg_training_hours": "연 12시간 (전년 32시간)",
+    "training_programs": {
+      "신입사원 교육": "중단",
+      "리더십 과정": "중단",
+      "기술교육": "최소 유지",
+      "어학지원": "폐지"
+    }
+  },
+  "work_environment": {
+    "avg_tenure": "4.2년 (감소 추세)",
+    "work_hours": {
+      "주평균": "58.5시간",
+      "야간근무": "월 12회",
+      "주말근무": "월 6회"
+    },
+    "safety": {
+      "산업재해": "2024년 12건 (전년 7건)",
+      "중대재해": "1건 (손가락 절단)",
+      "안전교육 시간": "법정 최소 시간만 준수"
+    },
+    "facilities": {
+      "식당": "단가 3,500원 → 2,800원 (품질 저하)",
+      "통근버스": "3개 노선 폐지",
+      "휴게실": "냉난방 제한",
+      "기숙사": "유지보수 중단"
+    }
+  },
+  "performance_management": {
+    "evaluation_cycle": "연 1회 (전년 2회)",
+    "forced_distribution": {
+      "S등급": "5% (승진 대상)",
+      "A등급": "20%",
+      "B등급": "50%",
+      "C등급": "20%",
+      "D등급": "5% (퇴출 대상)"
+    },
+    "promotion": {
+      "2024년 승진": 18,
+      "승진율": "2.1% (전년 8.5%)",
+      "승진 적체": "과장급 이상 평균 체류 7.2년"
+    }
+  },
+  "individual_evaluations": {
+    "high_performers": [
+      {
+        "employee_id": "EMP-2019-0847",
+        "name": "김성훈",
+        "department": "연구개발",
+        "position": "수석연구원",
+        "tenure": "8년 2개월",
+        "rating": "S",
+        "score": 96,
+        "achievements": [
+          "신제품 특허 3건 출원",
+          "불량률 5.8% → 2.1% 개선 프로젝트 주도",
+          "A전자 계약 복구 기술협상 성공"
+        ],
+        "salary": "9,200만원",
+        "promotion_eligible": true,
+        "retention_risk": "상 (경쟁사 스카웃 시도 2회)",
+        "notes": "핵심인력, 절대 유출 방지 필요"
+      },
+      {
+        "employee_id": "EMP-2020-1523",
+        "name": "박지은",
+        "department": "영업",
+        "position": "과장",
+        "tenure": "4년 8개월",
+        "rating": "A",
+        "score": 88,
+        "achievements": [
+          "신규 고객 5곳 확보 (연 23억 매출)",
+          "C배터리 계약 연장 협상 성공"
+        ],
+        "salary": "5,800만원",
+        "promotion_eligible": true,
+        "retention_risk": "중",
+        "notes": "차기 팀장 후보"
+      }
+    ],
+    "average_performers": [
+      {
+        "employee_id": "EMP-2018-0234",
+        "name": "이동욱",
+        "department": "생산",
+        "position": "반장",
+        "tenure": "6년 3개월",
+        "rating": "B",
+        "score": 72,
+        "achievements": ["생산 목표 달성률 98%"],
+        "salary": "4,500만원",
+        "promotion_eligible": false,
+        "retention_risk": "하",
+        "notes": "안정적 실무자"
+      },
+      {
+        "employee_id": "EMP-2021-0789",
+        "name": "최민지",
+        "department": "관리지원",
+        "position": "대리",
+        "tenure": "3년 1개월",
+        "rating": "B",
+        "score": 75,
+        "achievements": ["경비 절감 프로젝트 참여"],
+        "salary": "4,200만원",
+        "promotion_eligible": false,
+        "retention_risk": "하",
+        "notes": "업무 성실"
+      },
+      {
+        "employee_id": "EMP-2019-1456",
+        "name": "강태훈",
+        "department": "품질관리",
+        "position": "대리",
+        "tenure": "5년 6개월",
+        "rating": "B",
+        "score": 70,
+        "achievements": ["품질검사 표준 문서화"],
+        "salary": "4,600만원",
+        "promotion_eligible": false,
+        "retention_risk": "하",
+        "notes": "평범한 실적"
+      },
+      {
+        "employee_id": "EMP-2022-0312",
+        "name": "윤서아",
+        "department": "연구개발",
+        "position": "사원",
+        "tenure": "2년 4개월",
+        "rating": "B",
+        "score": 68,
+        "achievements": ["선임 연구원 보조 업무"],
+        "salary": "3,400만원",
+        "promotion_eligible": false,
+        "retention_risk": "중",
+        "notes": "성장 가능성 있음"
+      }
+    ],
+    "low_performers": [
+      {
+        "employee_id": "EMP-2017-0891",
+        "name": "정현수",
+        "department": "생산",
+        "position": "사원",
+        "tenure": "7년 2개월",
+        "rating": "C",
+        "score": 58,
+        "issues": [
+          "지각 연 23회",
+          "작업 오류율 평균 대비 2.3배",
+          "팀원과의 갈등 3건"
+        ],
+        "salary": "3,800만원",
+        "improvement_plan": "3개월 집중 관리 중",
+        "termination_risk": "중",
+        "notes": "개선 의지 부족"
+      },
+      {
+        "employee_id": "EMP-2020-0567",
+        "name": "오민석",
+        "department": "관리지원",
+        "position": "대리",
+        "tenure": "4년 1개월",
+        "rating": "C",
+        "score": 55,
+        "issues": [
+          "업무 태만 (경고 2회)",
+          "보고서 마감 지연 상습"
+        ],
+        "salary": "4,300만원",
+        "improvement_plan": "미수립",
+        "termination_risk": "중",
+        "notes": "동기부여 필요"
+      },
+      {
+        "employee_id": "EMP-2016-0123",
+        "name": "한재민",
+        "department": "영업",
+        "position": "차장",
+        "tenure": "8년 9개월",
+        "rating": "D",
+        "score": 42,
+        "issues": [
+          "목표 달성률 연속 3년 60% 미만",
+          "주요 고객 2곳 유실 (본인 책임)",
+          "회식 중 부적절한 발언으로 HR 경고 1회",
+          "동료 평가 최하위 (10점/100점)"
+        ],
+        "salary": "6,200만원",
+        "improvement_plan": "최종 경고 (2024.11)",
+        "termination_risk": "상",
+        "notes": "퇴출 1순위 - 희망퇴직 권고 예정",
+        "legal_concern": "부당해고 소송 가능성 있음"
+      },
+      {
+        "employee_id": "EMP-2021-0934",
+        "name": "배수진",
+        "department": "생산",
+        "position": "사원",
+        "tenure": "3년 2개월",
+        "rating": "D",
+        "score": 38,
+        "issues": [
+          "무단결근 8회",
+          "안전수칙 위반 5회 (중대재해 위험)",
+          "동료 폭언으로 징계위원회 회부",
+          "업무 거부 2회"
+        ],
+        "salary": "3,200만원",
+        "improvement_plan": "개선 불가 판정",
+        "termination_risk": "최상",
+        "notes": "즉시 해고 검토 중 - 법무팀 협의 필요",
+        "legal_concern": "징계 절차 진행 중, 노조 개입 가능성"
+      }
+    ],
+    "evaluation_summary": {
+      "total": 10,
+      "high_performers": 2,
+      "average_performers": 4,
+      "low_performers": 4,
+      "termination_candidates": 2,
+      "retention_priority": 1,
+      "urgent_action_required": "배수진 즉시 해고 검토, 한재민 희망퇴직 권고"
+    }
+  },
+  "diversity": {
+    "women_ratio": "36.9%",
+    "women_in_management": "12.3%",
+    "disability_employment": "2.1% (법정 3.1% 미달)",
+    "foreign_workers": 45
+  },
+  "urgent_hr_issues": [
+    "2025.01.15 총파업 예고 (생산 전면 중단 우려)",
+    "핵심인력 대량 이탈 (경쟁사 스카웃)",
+    "생산직 결원 85명 (가동률 저하)",
+    "임금체불 집단소송 임박 (120명)",
+    "초과근무 미지급 누적 23억",
+    "직원 사기 최저 수준 (만족도 52점)",
+    "채용 실패로 신규 프로젝트 착수 불가",
+    "배수진(EMP-2021-0934) 즉시 해고 법무 검토 필요",
+    "김성훈(EMP-2019-0847) 경쟁사 이직 방지 긴급 대책"
+  ],
+  "hr_contingency_plan": {
+    "status": "경영진 협의 중",
+    "options": [
+      "희망퇴직 200명 실시",
+      "임금 동결 2년",
+      "복리후생 30% 축소",
+      "성과급 폐지",
+      "주 4일 근무제 (급여 20% 삭감)"
+    ]
+  }
 }

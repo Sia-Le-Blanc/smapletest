@@ -1,0 +1,170 @@
+/* styles.css */
+
+/* 메인 배경 */
+.stApp {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* 메인 컨테이너 */
+.main-container {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    margin: 20px auto;
+    max-width: 1400px;
+}
+
+/* 타이틀 */
+.title {
+    font-size: 48px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 40px;
+    font-weight: 500;
+}
+
+/* 검색창 */
+.stTextInput > div > div > input {
+    border-radius: 50px;
+    border: 2px solid #667eea;
+    padding: 15px 25px;
+    font-size: 16px;
+    color: #1a1a1a !important;
+    background: white !important;
+}
+
+/* 버튼 */
+.stButton > button {
+    border-radius: 50px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white !important;
+    border: none;
+    padding: 15px 40px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.stButton > button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+}
+
+/* 부서 카드 */
+.dept-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    margin: 10px 0;
+    border-left: 5px solid #667eea;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.dept-name {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1a1a1a !important;
+    margin-bottom: 12px;
+}
+
+.dept-summary {
+    color: #333 !important;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.dept-summary strong {
+    color: #667eea !important;
+}
+
+/* 라운드 뱃지 */
+.round-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white !important;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+/* 상태 표시 */
+.status-analyzing {
+    color: #667eea !important;
+    font-weight: 600;
+}
+
+.status-complete {
+    color: #10b981 !important;
+    font-weight: 600;
+}
+
+/* Streamlit 기본 요소 색상 */
+.stMarkdown {
+    color: #1a1a1a !important;
+}
+
+.stMarkdown h1, .stMarkdown h2, .stMarkdown h3 {
+    color: #1a1a1a !important;
+}
+
+.stMarkdown p {
+    color: #333 !important;
+}
+
+/* Expander */
+.streamlit-expanderHeader {
+    background: white !important;
+    color: #1a1a1a !important;
+    font-weight: 600;
+    border-radius: 10px;
+}
+
+.streamlit-expanderContent {
+    background: white !important;
+    color: #1a1a1a !important;
+}
+
+/* Success/Info 메시지 */
+.stSuccess {
+    background: #d1fae5 !important;
+    color: #065f46 !important;
+}
+
+.stInfo {
+    background: #dbeafe !important;
+    color: #1e40af !important;
+}
+
+/* Status 컴포넌트 */
+[data-testid="stStatusWidget"] {
+    background: white !important;
+    color: #1a1a1a !important;
+}
+
+/* 다운로드 버튼 */
+.stDownloadButton > button {
+    border-radius: 50px;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white !important;
+    border: none;
+    padding: 12px 30px;
+    font-weight: 600;
+}
+
+.stDownloadButton > button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(16, 185, 129, 0.4);
+}

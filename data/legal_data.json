@@ -1,11 +1,263 @@
 {
-  "report_title": "법무 리스크 현황",
-  "period": "2024년 12월 기준",
-  "pending_lawsuits": "진행중인 소송 7건 (총 소송금액 230억원)",
-  "labor_disputes": "노동청 진정사건 12건 (임금체불 9건, 부당해고 3건)",
-  "patent_issue": "특허침해 소송 2건 패소 1심 판결 (손해배상 85억원)",
-  "regulatory_violation": "공정거래위원회 조사중 (부당거래 혐의)",
-  "contract_breach": "주요 납품계약 위반 클레임 3건 접수",
-  "compliance_score": "컴플라이언스 점검결과 62점 (80점 이상 필요)",
-  "urgent_matter": "대표이사 횡령 내부고발 건 검찰 이첩 예정"
+  "report_title": "법무 리스크 종합현황",
+  "period": "2024년 12월 31일 기준",
+  "company_info": {
+    "legal_team": {
+      "인원": 8,
+      "구성": "법무팀장 1, 변호사 3, 법무담당 4",
+      "외부 자문": "김앤장 법률사무소 (월 1,200만원)"
+    }
+  },
+  "pending_lawsuits": {
+    "total_cases": 7,
+    "total_amount": "230억원",
+    "by_type": {
+      "민사": 4,
+      "형사": 2,
+      "행정": 1
+    },
+    "details": [
+      {
+        "case_no": "2024가합50123",
+        "plaintiff": "A전자 주식회사",
+        "claim": "계약위반 손해배상",
+        "amount": "85억원",
+        "status": "1심 진행 중",
+        "court": "서울중앙지방법원",
+        "next_hearing": "2025-02-18",
+        "our_position": "불량률 기준 미달은 A전자 사양 변경 때문",
+        "win_probability": "40%",
+        "estimated_loss": "60억~85억"
+      },
+      {
+        "case_no": "2024가합62471",
+        "plaintiff": "B디스플레이",
+        "claim": "납품지연 위약금",
+        "amount": "28억원",
+        "status": "조정 진행 중",
+        "court": "수원지방법원",
+        "next_hearing": "2025-01-30",
+        "our_position": "코로나로 인한 불가항력",
+        "win_probability": "60%",
+        "estimated_loss": "10억~15억"
+      },
+      {
+        "case_no": "2023가합81234",
+        "plaintiff": "前 연구소장 이OO",
+        "claim": "부당해고 및 명예훼손",
+        "amount": "12억원",
+        "status": "2심 항소 중",
+        "court": "서울고등법원",
+        "next_hearing": "2025-03-12",
+        "our_position": "정당한 징계 절차 이행",
+        "win_probability": "70%",
+        "estimated_loss": "3억~8억"
+      },
+      {
+        "case_no": "2024나12345",
+        "plaintiff": "퇴직 직원 120명 (집단소송)",
+        "claim": "초과근무수당 미지급",
+        "amount": "23억원",
+        "status": "소 제기 임박 (변호인 선임 완료)",
+        "expected_filing": "2025-01-20",
+        "our_position": "포괄임금제 적용",
+        "win_probability": "30%",
+        "estimated_loss": "18억~23억",
+        "note": "패소 시 재직자 800명 추가 청구 가능 (추정 120억)"
+      }
+    ]
+  },
+  "patent_ip": {
+    "total_patents": 127,
+    "active_patents": 89,
+    "pending_applications": 12,
+    "disputes": [
+      {
+        "case_no": "2024허1234",
+        "opponent": "C테크놀로지 (중국)",
+        "claim": "특허침해",
+        "patent_no": "KR10-2018-0012345",
+        "technology": "반도체 공정 기술",
+        "status": "1심 패소",
+        "amount": "85억원",
+        "next_step": "항소 예정 (2025.01.31 기한)",
+        "win_probability": "50%",
+        "strategy": "무효심판 병행 추진"
+      },
+      {
+        "case_no": "2024허5678",
+        "opponent": "D전자",
+        "claim": "우리 특허 침해",
+        "patent_no": "KR10-2020-0098765",
+        "technology": "배터리 제어 알고리즘",
+        "status": "소 제기 완료",
+        "amount": "15억원 청구",
+        "next_hearing": "2025-04-10",
+        "win_probability": "65%"
+      }
+    ]
+  },
+  "labor_legal_issues": {
+    "labor_office_complaints": 12,
+    "details": [
+      {
+        "complaint_no": "서울2024-1823",
+        "complainant": "생산2팀 직원 35명",
+        "issue": "임금체불 (보너스 미지급)",
+        "amount": "8억원",
+        "status": "조사 진행 중",
+        "deadline": "2025-02-15",
+        "penalty_risk": "20% 가산금 + 형사처벌"
+      },
+      {
+        "complaint_no": "서울2024-2947",
+        "complainant": "노동조합",
+        "issue": "부당노동행위 (단체교섭 거부)",
+        "status": "조사 개시",
+        "penalty_risk": "2년 이하 징역 또는 2천만원 이하 벌금"
+      },
+      {
+        "complaint_no": "서울2024-3156",
+        "complainant": "前 생산팀장 3명",
+        "issue": "부당해고",
+        "status": "노동위원회 심판 중",
+        "next_hearing": "2025-02-28",
+        "reinstatement_risk": "복직 명령 시 임금 소급 지급 4.5억"
+      }
+    ],
+    "industrial_accident_litigation": {
+      "case_no": "2024가단98765",
+      "plaintiff": "김OO (손가락 절단 사고)",
+      "claim": "산재 외 민사 손해배상",
+      "amount": "3억원",
+      "status": "합의 협상 중",
+      "our_offer": "1.2억원",
+      "plaintiff_demand": "2.5억원"
+    }
+  },
+  "regulatory_compliance": {
+    "ftc_investigation": {
+      "case_no": "2024조사1234",
+      "issue": "하도급법 위반 (부당단가 인하)",
+      "investigated_by": "공정거래위원회",
+      "status": "현장조사 완료, 의견서 제출 대기",
+      "deadline": "2025-01-25",
+      "penalty_range": "과징금 5억~50억 + 시정명령",
+      "related_transactions": "연 280억 규모"
+    },
+    "environmental_violation": {
+      "issue": "폐수배출 기준 초과",
+      "agency": "환경부",
+      "penalty": "과태료 4,500만원 (기납부)",
+      "follow_up": "시설 개선 명령 (기한 2025.06.30)"
+    },
+    "occupational_safety": {
+      "violations": 5,
+      "total_fines": "8,500만원",
+      "major_issues": [
+        "안전교육 미실시 (3건)",
+        "안전장비 미비 (2건)"
+      ],
+      "serious_accident_risk": "중대재해처벌법 적용 가능성 (대표이사 형사처벌)"
+    }
+  },
+  "contract_disputes": {
+    "breach_claims": 3,
+    "details": [
+      {
+        "counterparty": "E상사 (원자재 공급업체)",
+        "issue": "장기공급계약 조기해지 통보",
+        "contract_value": "연 150억",
+        "penalty_clause": "계약금액의 10% (15억)",
+        "our_claim": "불가항력 조항 적용 주장",
+        "status": "협상 중"
+      },
+      {
+        "counterparty": "F물류",
+        "issue": "물류비 미지급",
+        "amount": "2.3억원 (3개월 체납)",
+        "status": "내용증명 수령",
+        "next_step": "가압류 신청 예정"
+      }
+    ]
+  },
+  "internal_investigation": {
+    "case": "대표이사 횡령 의혹",
+    "whistleblower": "익명 내부제보",
+    "reported_date": "2024-11-15",
+    "allegation": "비자금 조성 및 개인적 유용 (추정 50억)",
+    "status": "내부감사 완료, 검찰 이첩 검토 중",
+    "board_decision": "2025.01.10 이사회 결정 예정",
+    "related_risks": [
+      "횡령죄 성립 시 대표이사 구속",
+      "회사 신용등급 추가 하락",
+      "주요 거래처 계약 해지 연쇄반응",
+      "상장폐지 가능성"
+    ]
+  },
+  "compliance_audit": {
+    "last_audit": "2024-09-30",
+    "score": "62/100",
+    "required_score": "80/100",
+    "major_findings": [
+      "내부통제 시스템 미흡",
+      "개인정보보호 규정 미준수",
+      "공시의무 위반 소지",
+      "이해관계자 거래 투명성 부족"
+    ],
+    "improvement_deadline": "2025-03-31",
+    "penalty_if_not_improved": "금융위 제재 + 과징금"
+  },
+  "contract_management": {
+    "total_contracts": 850,
+    "high_risk_contracts": 23,
+    "expiring_soon": [
+      {
+        "counterparty": "C배터리",
+        "value": "연 180억",
+        "expiry": "2025-06-30",
+        "renewal_status": "협상 미개시",
+        "risk": "대체 고객 없음"
+      },
+      {
+        "counterparty": "주거래은행 (신한은행)",
+        "loan_amount": "800억",
+        "expiry": "2025-09-15",
+        "renewal_status": "연장 거부 통보",
+        "risk": "차환 실패 시 부도"
+      }
+    ]
+  },
+  "legal_costs": {
+    "annual_budget": "18억",
+    "actual_spending_2024": "22억 (+22%)",
+    "breakdown": {
+      "외부 변호사 수임료": "12억",
+      "소송비용": "5억",
+      "과태료/벌금": "3억",
+      "자문료": "2억"
+    },
+    "2025_forecast": "35억 (소송 증가 예상)"
+  },
+  "urgent_legal_issues": [
+    "대표이사 횡령 검찰 이첩 (2025.01.10 이사회)",
+    "초과근무 집단소송 제기 임박 (2025.01.20)",
+    "총파업 시 업무방해죄 성립 가능성",
+    "특허소송 항소 기한 (2025.01.31)",
+    "공정위 의견서 제출 (2025.01.25)",
+    "A전자 소송 패소 시 85억 배상",
+    "회사채 800억 만기 미상환 시 채무불이행"
+  ],
+  "legal_risk_assessment": {
+    "overall_risk_level": "상 (Critical)",
+    "probability_of_major_loss": "85%",
+    "estimated_total_exposure": "최소 200억 ~ 최대 500억",
+    "recommended_actions": [
+      "긴급 법률자문단 구성",
+      "소송준비금 150억 적립",
+      "대표이사 사임 검토",
+      "주요 소송 합의 추진",
+      "컴플라이언스 시스템 전면 개편"
+    ]
+  }
 }
