@@ -4,64 +4,42 @@ import json
 class Router:
     def __init__(self):
         self.url = "http://localhost:11434/api/generate"
-        self.model_id = "gemma2:2b"
+        # 더 정교한 판단을 위해 9b 모델 적용
+        self.model_id = "gemma2:9b" 
     
     def decide(self, query, context=""):
-        prompt = f"""당신은 기업 비서실장입니다. 한국어로만 답변하세요.
+        prompt = f"""당신은 기업의 비서실장입니다. 한국어로 답변하세요.
+[상황] {query}
+[이전 분석 맥락] {context if context else "없음"}
 
-[이전 분석 맥락]
-{context}
-
-[현재 질문]
-{query}
-
-[임무]
-이 질문을 해결하기 위해 어떤 전문가의 분석이 필요한지 판단하세요.
-
-선택 가능한 전문가:
-- finance: 재무/회계/자금 관련
-- hr: 인사/조직/인력 관련  
-- legal: 법무/소송/컴플라이언스 관련
+[임무] 이 문제를 해결하기 위해 어떤 부서의 전문 분석이 필요한지 결정하세요.
+선택 가능 부서: finance(재무), hr(인사), legal(법무)
 
 [응답 규칙]
-- 필요한 전문가 이름만 쉼표로 구분하여 작성
-- 예시: finance,hr
-- 설명 없이 전문가 이름만 출력"""
+- 필요한 부서 이름만 쉼표로 구분하여 출력 (예: finance,hr)
+- 설명 없이 부서명만 정확히 출력하세요."""
 
-        data = {
-            "model": self.model_id,
-            "prompt": prompt,
-            "stream": False
-        }
-        
-        response = requests.post(self.url, json=data)
-        result = response.json()['response']
-        agents = result.strip().lower().replace(' ', '').split(',')
-        return agents
-    
+        data = {"model": self.model_id, "prompt": prompt, "stream": False}
+        try:
+            response = requests.post(self.url, json=data)
+            result = response.json()['response']
+            return [a.strip().lower() for a in result.split(',') if a.strip()]
+        except Exception as e:
+            return ['finance', 'hr', 'legal']
+
     def should_continue(self, context):
-        prompt = f"""당신은 기업 비서실장입니다. 한국어로만 답변하세요.
-
-[분석 결과]
+        prompt = f"""당신은 기업 비서실장입니다. 
+[현재 분석 결과]
 {context}
 
 [판단 기준]
-현재 분석 결과만으로 경영진이 의사결정을 내릴 수 있는가?
+- 각 부서가 자기 부서 데이터만 나열하고 있는가? -> "계속" (합동 토론 필요)
+- 부서 간의 연쇄 리스크(예: 재무 위기가 인사 이탈에 미치는 영향 등)가 충분히 분석되었는가? -> "완료"
 
-- 각 부서의 문제점이 명확하게 파악되었다 → "완료"
-- 분석이 너무 피상적이거나 애매하다 → "계속"
-- 이미 충분히 상세한 분석이 완료되었다면, 추가 분석은 불필요 → "완료"
-
-중요: 모든 부서를 반드시 분석할 필요는 없음. 현재 분석된 부서들의 내용이 충분하면 완료.
-
-결과: (완료 또는 계속 중 한 단어만)"""
-
-        data = {
-            "model": self.model_id,
-            "prompt": prompt,
-            "stream": False
-        }
-        
-        response = requests.post(self.url, json=data)
-        result = response.json()['response']
-        return "계속" in result
+결과(완료 또는 계속 중 한 단어만):"""
+        data = {"model": self.model_id, "prompt": prompt, "stream": False}
+        try:
+            response = requests.post(self.url, json=data)
+            return "계속" in response.json()['response']
+        except:
+            return False
